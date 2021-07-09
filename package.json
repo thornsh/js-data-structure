@@ -1,0 +1,14 @@
+{
+  "name": "js-data-structure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "thornsh",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "src/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces run build"
+  }
+}
