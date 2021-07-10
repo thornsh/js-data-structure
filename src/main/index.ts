@@ -1,7 +1,1 @@
-function add(a: number, b: number): number {
-  return a + b;
-}
-
-export default {
-  add
-}
+import './binary-search-tree/binary-search-tree'
