@@ -1,1 +1,1 @@
-import './binary-search-tree/binary-search-tree'
+import './graph/graph'

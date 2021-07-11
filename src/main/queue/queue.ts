@@ -3,7 +3,7 @@ class Queue {
   constructor() {
     this.items = [];
   }
-  enqueue(element, priority) {
+  enqueue(element) {
     this.items.push(element);
   }
   dequeue() {
