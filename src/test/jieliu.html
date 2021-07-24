@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input class="search" type="text" />
+    <script>
+      // 1.获取输入框
+      var search = document.querySelector(".search");
+
+      // 2.监听输入内容,发送ajax请求
+      // 2.1.定义一个监听函数
+      var counter = 0;
+      function searchChange() {
+        counter++;
+        console.log("发送" + counter + "网络请求");
+      }
+      var searchChange = throttle(searchChange, 500);
+
+      // 绑定oninput
+      search.oninput = searchChange;
+      // function throttle(fn, interval) {
+      //   var last = 0;
+      //   return function () {
+      //     // this和argument
+      //     var _this = this;
+      //     var _arguments = arguments;
+
+      //     var now = new Date().getTime();
+      //     if (now - last > interval) {
+      //       fn.apply(_this, _arguments);
+      //       last = now;
+      //     }
+      //   };
+      // }
+      function throttle(fn, interval) {
+        let active = false;
+        return function () {
+          // this和argument
+          var _this = this;
+          var _arguments = arguments;
+
+          if(!active) {
+            active = true;
+            fn.apply(_this, _arguments);
+            setTimeout(() => {
+              active = false;
+            }, interval);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
