@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas id="drawing" width="200" height="200"
+      >A drawing of something.</canvas
+    >
+    <script>
+      let drawing = document.getElementById("drawing");
+      // 确保浏览器支持<canvas>
+      if (drawing.getContext) {
+        let context = drawing.getContext("2d");
+        /*
+         * 引自 MDN 文档
+         */
+        // 绘制红色矩形
+        context.strokeStyle = "#ff0000";
+        context.lineWidth = 5
+        context.lineCap = 'butt'
+        context.lineJoin = 'round'
+        context.strokeRect(10, 10, 50, 50);
+        // 绘制半透明蓝色矩形
+        context.fillStyle = "rgba(0,0,255,0.5)";
+        // context.strokeStyle = "red";
+        context.strokeRect(30, 30, 50, 50);
+      }
+    </script>
+  </body>
+</html>
